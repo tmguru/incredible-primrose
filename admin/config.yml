@@ -1,0 +1,194 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: img
+public_folder: /img
+collections:
+  - name: config
+    label: Config
+    files:
+      - name: config
+        label: Config
+        file: _config.yml
+        fields:
+          - widget: string
+            name: title
+            label: Site title
+            required: true
+          - widget: string
+            name: email
+            label: Your Email
+            required: false
+          - widget: string
+            name: url
+            label: Site URL
+            required: false
+          - widget: string
+            name: description
+            label: Site Description
+            required: false
+          - widget: string
+            name: keywords
+            label: Keywords for Search
+            required: false
+          - widget: string
+            name: skills
+            label: Skills
+            required: false
+            hint: Describe your skills
+          - widget: string
+            name: meta_author
+            label: Author Name
+            required: false
+          - widget: string
+            name: google_verify
+            label: Google Verify Code
+            required: false
+            hint: Google webmaster tools
+          - widget: string
+            name: bing_verify
+            label: Bing Verify Code
+            required: false
+            hint: >-
+              https://ssl.bing.com/webmaster/configure/verify/ownership Option 2
+              content= goes here
+          - widget: select
+            name: contact
+            label: Contact Form
+            required: false
+            options:
+              - static
+              - disqus
+          - widget: string
+            name: disqus_shortname
+            label: Disqus Shortname
+            required: false
+          - widget: object
+            name: color
+            label: Color Settings
+            required: false
+            fields:
+              - widget: string
+                name: primary
+                label: Primary Color
+                required: false
+              - widget: string
+                name: primary-rgb
+                label: Primary RGB Color
+                required: false
+              - widget: string
+                name: secondary
+                label: Secondary Color
+                required: false
+              - widget: string
+                name: secondary-dark
+                label: Secodary Dark Color
+                required: false
+          - widget: object
+            name: footer
+            label: Footer Settings
+            required: false
+            fields:
+              - widget: string
+                name: copyright
+                label: Copyright
+                required: false
+              - widget: string
+                name: location
+                label: Location
+                required: false
+              - widget: string
+                name: social
+                label: Social
+                required: false
+              - widget: string
+                name: credits
+                label: Credits
+                required: false
+          - widget: list
+            name: social
+            label: Social
+            required: false
+            fields:
+              - widget: string
+                name: title
+                label: Social Name
+                required: false
+              - widget: string
+                name: url
+                label: Social URL
+                required: false
+          - widget: list
+            name: address
+            label: Postal Address
+            required: false
+            fields:
+              - widget: string
+                name: line
+                label: Line
+                required: false
+          - widget: string
+            name: credits
+            label: Credits
+            required: false
+            hint: Credits Content
+          - widget: hidden
+            name: markdown
+            label: Markdown
+            required: false
+            hint: Build settings
+          - widget: hidden
+            name: permalink
+            label: Permalink
+            required: false
+            hint: Build Settings
+  - name: post
+    label: Postss
+    folder: _posts
+    create: true
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - widget: hidden
+        name: layout
+        label: Layout
+        required: true
+        default: default
+      - widget: number
+        name: modal-id
+        label: Modal ID
+        required: false
+        valueType: int
+      - widget: date
+        name: date
+        label: Published Date
+        required: false
+      - widget: image
+        name: img
+        label: Portfolio Image
+        required: false
+      - widget: string
+        name: alt
+        label: Image Alt Text
+        required: false
+      - widget: string
+        name: project-date
+        label: Project Date
+        required: false
+      - widget: string
+        name: client
+        label: Client
+        required: false
+      - widget: string
+        name: category
+        label: Job Category
+        required: false
+      - widget: text
+        name: description
+        label: Work Description
+        required: false
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
